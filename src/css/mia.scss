@@ -16,6 +16,8 @@ body.tema.claro {
     background-color: map-get($temaClaro,"fondo");
     color: map-get($temaClaro,"letraPrincipal");
 
+    font: map-get($temaClaro, 'letraPrincipal');
+
     a {
         color: map-get($temaClaro,"letraSecundaria");
     }
@@ -75,7 +77,7 @@ body.tema.claro {
             width: 40vw;
             height: 70vh;
             border-radius: 10px;
-            background-color: white;
+            background-color: map-get($temaClaro, 'fondo');
             position: absolute;
             left: 30%;
             top: 10%;
