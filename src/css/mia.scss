@@ -1,0 +1,165 @@
+@import 'normalize', 'skeleton','miscelanea','menu';
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+// @mixin centrado {
+//     text-align: center;
+// }
+
+body.tema.claro {
+    background-color: map-get($temaClaro,"fondo");
+    color: map-get($temaClaro,"letraPrincipal");
+
+    a {
+        color: map-get($temaClaro,"letraSecundaria");
+    }
+
+    @include acordeon($temaClaro);
+
+    .titulo{
+        @include centrado;
+    }
+
+    .logo{
+        width: 100px;
+        height: 100px;
+    }
+    .usuario{
+        width: 50px;
+        height: 50px;
+    }
+    .ajustes{
+        width: 30px;
+        height: 30px;
+    }
+
+    .tablero {
+        background-color: map-get($temaClaro, 'principal');
+        padding: 1em;
+    }
+
+    .panel {
+        padding: 1em;
+        background-color: map-get($temaClaro, 'panel');
+        border-radius: 10px;
+    }
+
+    .tarjetas {
+        background-color: map-get($temaClaro, 'tarjeta');
+        border-radius: 10px;
+        padding: 2em;
+        margin-top: 1em;
+    }
+
+
+    .anadir {
+        text-align: center;
+    }
+
+    .modal{
+        background-color: map-get($temaClaro, 'panel');
+        font: map-get($temaClaro, 'letraPrincipal');
+        width: 100vw;
+        height:100vh;
+        position: absolute;
+        top:0;
+        left:0;
+
+        div.contenido{
+            width: 40vw;
+            height: 70vh;
+            border-radius: 10px;
+            background-color: white;
+            position: absolute;
+            left: 30%;
+            top: 10%;
+        }
+    }
+
+
+
+
+/*
+    .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+
+        div {
+            width: 50vw;
+            height: 50vh;
+            position: absolute;
+            top: 20%;
+            left: 30%;
+            background-color: white;
+            border-radius: 10px;
+        }
+    }*/
+}
+
+body.tema.oscuro {
+    background-color: map-get($temaOscuro,"fondo");
+    color: map-get($temaOscuro,"letraPrincipal");
+
+    a {
+        color: map-get($temaOscuro,"letraSecundaria");
+    }
+
+    @include acordeon($temaOscuro);
+}
+
+$temaClaro:(
+    "principal": #153462,
+    "panel":     #BAD1C2,
+    "tarjeta":   #4FA095,
+    "lateral":   #4FA095,
+    "fondo":     #F6F6C9,
+    "letraPrincipal": 12pt arial #000000,
+    "letraSecundaria": 12pt arial #FFFFFF,
+);
+
+body.tema.claro {
+
+    background-color: map-get($temaClaro,"fondo");
+    color: map-get($temaClaro,"letraPrincipal");
+
+    a {
+        color: map-get($temaClaro,"letraSecundaria");
+    }
+
+    @include acordeon($temaClaro);
+
+}
+
+$temaOscuro:(
+    "principal": #581845,
+    "panel":     #900C3F,
+    "tarjeta":   #C70039,
+    "lateral":   #FF5733,
+    "fondo":     #FFC30F,
+    "letraPrincipal": 12pt verdana #ffffff,
+    "letraSecundaria": 10pt verdana #000000,
+);
+
+body.tema.oscuro {
+
+    background-color: map-get($temaOscuro,"fondo");
+    color: map-get($temaOscuro,"letraPrincipal");
+
+    a {
+        color: map-get($temaOscuro,"letraSecundaria");
+    }
+
+    @include acordeon($temaOscuro);
+
+}
+

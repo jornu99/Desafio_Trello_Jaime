@@ -1,0 +1,76 @@
+// @mixin menu($tema) {
+//     nav {
+//         ul {
+//             li {
+//                 display: block;
+//                 float: right;
+//                 border: 1px solid black;
+//             }
+//         }
+//     }
+// }
+
+body.tema.oscuro {
+    $tamPestanias: 600px;
+    $colorPestaniaActiva: rgb(234, 255, 185);
+    nav {
+        ul {
+            list-style: none;
+            display: flow-root;
+            width: $tamPestanias;
+            margin: 0;
+            
+            li {
+                border-radius: 10px 10px 0px 0px;
+                float: left;
+                padding: 1em;
+                background-color: rgb(228, 228, 228);
+                margin-left: 1em;
+
+                &:active {
+                    background-color: $colorPestaniaActiva;
+                    border-bottom: 0px;
+                }
+
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+@mixin acordeon($tema) {
+    div.acordeon {
+        div {
+            display: block;
+            width: 100%;
+
+            h3 {
+                font: map.get($tema,"letraPrincipal");
+                width: 100%;
+                padding-left: 1em;
+                background: map.get($tema,"tarjeta");
+                height: 3em;
+                line-height: 3em;
+                margin: 0;
+
+                &:hover {
+                    background-color: map.get($tema,"fondo");
+                }
+
+                span {
+                    float: right;
+                    padding-right: 2em;
+                }
+            }
+
+            article {
+                background-color: map.get($tema,"fondo");
+                color: map.get($tema,"letraSecundaria");
+                border: 2px solid map.get($tema,"principal");
+                display: none;
+
+            }
+        }
+    }
+}
